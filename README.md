@@ -1,5 +1,5 @@
 # Game-of-life
 ## Conway's game of Life
-![Test Image]{Gol.png}
+![Test Image](Gol.png)
 
 
