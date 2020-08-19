@@ -6,6 +6,7 @@
 3. A live cell with exactly 2 or 3 live neighbours remains alive in next generation.
 4. A dead cell with exactly 3 neighbours becomes alive in the next generation.
 -"Neighbours" are the cells which are directly above, below, sideways or diagonal to any cell.
+-Dark cells are considered alive.
 
 
 ![Image-Description](https://github.com/sandeshpokhrel54/Game-of-life/blob/master/Gol.PNG)
