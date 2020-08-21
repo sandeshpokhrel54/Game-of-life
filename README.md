@@ -11,7 +11,7 @@
 -Dark cells are considered alive.
 
 
-![Image-Description](https://github.com/sandeshpokhrel54/Game-of-life/blob/master/Gol.PNG)
+![Image-Description](https://github.com/sandeshpokhrel54/Game-of-life/blob/master/autplay-button.PNG)
 
 
 ### Windmill
