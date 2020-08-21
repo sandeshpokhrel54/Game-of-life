@@ -7,6 +7,7 @@
 4. A dead cell with exactly 3 neighbours becomes alive in the next generation.
 
 -"Neighbours" are the cells which are directly above, below, sideways or diagonal to any cell.
+
 -Dark cells are considered alive.
 
 
