@@ -39,6 +39,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QPushButton" name="autoPlay">
+      <property name="text">
+       <string>Autoplay</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QPushButton" name="Reset">
       <property name="text">
        <string>Reset</string>

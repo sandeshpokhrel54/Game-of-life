@@ -11,13 +11,13 @@ MainWindow::MainWindow(QWidget *parent)
     scene = new QGraphicsScene(this);
     ui->graphicsView->setScene(scene);
 
+    play = true;  //initializing autoplay button state
+
     resolution = 40;  //hardcoded resolution
     gridLength = 30;  //hardcoded gridLength
 
     genCount = 1;     //generation counter
     setupGrid();  //create the original grid
-
-
 
 }
 
@@ -69,7 +69,6 @@ void MainWindow::on_Reset_clicked()
     }
 
 }
-
 
 void MainWindow::gridUpdate()
 {
@@ -152,20 +151,34 @@ void MainWindow::gameLogic()
 }
 
 
-//void MainWindow::on_autoPlay_clicked()
-//{
-//    ui->autoPlay->setObjectName("Stop");
-//    for(int i=0; genCount<100; i++)
-//    {
+void MainWindow::on_autoPlay_clicked()
+{
+    if(play)
+    {
 
-//        gameLogic();
-//        gridUpdate();
-//        ui->genCount->setText("Generation:"+ QString::number(genCount));
-//        genCount++;
-//        QThread::sleep(2000);
+       //setting up timer
+       timer = new QTimer(this);
+       connect(timer,SIGNAL(timeout()),this, SLOT(on_Start_clicked()));
+       timer->start(500);
 
-//    }
-//}
+       ui->autoPlay->setText("Stop");
+
+
+    }
+    else
+    {
+       ui->autoPlay->setText("Autoplay");
+       timer->stop();
+
+    }
+
+    if(play)
+        play = false;
+    else
+        play = true;
+
+}
+
 //void MainWindow::gridResize()
 //{
 //    for(int i=0; i<gridLength; i++)
@@ -194,7 +207,5 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-
 
 

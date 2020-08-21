@@ -5,7 +5,7 @@
 #include<QGraphicsScene>
 #include"grid.h"
 #include<iostream>
-#include<QThread>
+#include<QTimer>
 
 
 
@@ -28,6 +28,8 @@ private slots:
 
     void on_Reset_clicked();
 
+    void on_autoPlay_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
@@ -38,6 +40,8 @@ private:
     Grid *grid[30][30], *nextGen[30][30];
     int gridLength,resolution;
     int genCount=0;
+    QTimer *timer;
+    bool play;
 
 
 
