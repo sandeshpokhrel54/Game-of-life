@@ -10,6 +10,8 @@
 -Dark cells are considered alive.  
 -Select any cell to make the cell alive or dead.  
 -Observe the change one by one with "Next Generation" button or overall in a long run through "Autoplay" button.  
+-Reset button to reset the grid.
+-Use the slider to increase the number of cells.(Using the slider also resets the grid)  
 
 
 ![Image-Description](https://github.com/sandeshpokhrel54/Game-of-life/blob/master/autplay-button.PNG)
