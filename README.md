@@ -7,7 +7,6 @@
 4. A dead cell with exactly 3 neighbours becomes alive in the next generation.
 
 -"Neighbours" are the cells which are directly above, below, sideways or diagonal to any cell.
-
 -Dark cells are considered alive.
 -Select any cell to make the cell alive or dead.
 -Observe the change one by one with "Next Generation" button or overall in a long run through "Autoplay" button.
