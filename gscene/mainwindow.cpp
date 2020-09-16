@@ -13,10 +13,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     play = true;  //initializing autoplay button state
 
-    resolution = 40;  //hardcoded resolution
-    gridLength = 30;  //hardcoded gridLength
 
-    genCount = 1;     //generation counter
+    gridLength = 15;  //hardcoded gridLength
+    resolution = maxresol - gridLength;  //hardcoded resolution
+
+    genCount = 0;     //generation counter
     setupGrid();  //create the original grid
 
 }
@@ -57,16 +58,10 @@ void MainWindow::on_Start_clicked()
 
 void MainWindow::on_Reset_clicked()
 {
-    genCount = 1;
+    genCount = 0;
     ui->genCount->setText("Generation:" + QString::number(genCount));
-    for(int i=0; i<gridLength; i++)
-    {
-       for(int j=0; j<gridLength; j++)
-       {
-            grid[i][j]->life = false;
-            grid[i][j]->update();
-       }
-    }
+    deallocate();
+    setupGrid();
 
 }
 
@@ -78,13 +73,11 @@ void MainWindow::gridUpdate()
         {
             grid[i][j]->life = nextGen[i][j]->life;
             grid[i][j]->update();
-//                nextGen[i][j]->life = false;
 
         }
     }
 
 }
-
 
 void MainWindow::gameLogic()
 {
@@ -150,6 +143,18 @@ void MainWindow::gameLogic()
 
 }
 
+void MainWindow::deallocate()
+{
+    for(int i =0; i<gridLength;i++)
+    {
+        for(int j=0; j<gridLength; j++)
+        {
+            delete grid[i][j];
+            delete  nextGen[i][j];
+        }
+    }
+
+}
 
 void MainWindow::on_autoPlay_clicked()
 {
@@ -177,35 +182,21 @@ void MainWindow::on_autoPlay_clicked()
     else
         play = true;
 
+
 }
 
-//void MainWindow::gridResize()
-//{
-//    for(int i=0; i<gridLength; i++)
-//    {
-//        for(int j=0; j<gridLength; j++)
-//        {
-//            grid[i][j]->squareDim = resolution;
-//            nextGen[i][j]->squareDim = resolution;
-//            grid[i][j]->update();
-//            nextGen[i][j]->update();
-//        }
-//    }
-//
-//}
+void MainWindow::on_gridVal_valueChanged(int value)
+{
 
-
-//void MainWindow::on_Resolution_actionTriggered(int action)
-//{
-//    resolution = action;
-//    gridResize();
-
-//}
+    std::cout<<value<<std::endl;
+    deallocate();
+    gridLength = value;
+    resolution = maxresol - gridLength;
+    setupGrid();
+}
 
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-

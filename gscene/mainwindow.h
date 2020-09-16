@@ -30,6 +30,8 @@ private slots:
 
     void on_autoPlay_clicked();
 
+    void on_gridVal_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
@@ -42,6 +44,8 @@ private:
     int genCount=0;
     QTimer *timer;
     bool play;
+    void deallocate();
+    const int maxresol = 55;
 
 
 

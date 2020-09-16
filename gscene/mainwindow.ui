@@ -16,7 +16,14 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QGraphicsView" name="graphicsView"/>
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="genCount">
@@ -49,6 +56,19 @@
      <widget class="QPushButton" name="Reset">
       <property name="text">
        <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="gridVal">
+      <property name="minimum">
+       <number>15</number>
+      </property>
+      <property name="maximum">
+       <number>30</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
